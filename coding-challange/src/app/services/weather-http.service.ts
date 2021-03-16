@@ -31,7 +31,7 @@ export class WeatherHttpService {
     const params = {...coord, 'exclude': 'current,minutely,daily,alerts'}
     return this.httpClient.get<HourlyWeather>(this.hourlyWeatherEndpointURI, {params: params}).pipe(
       map(value => {
-        value.hourly = value.hourly.slice(0, 12);
+        value.hourly = value.hourly.slice(0, 24);
         return new BaseHourlyWeather(value.timezone, value.timezone_offset,
           value.hourly.map(value1 => {
             return new HourlyEntity(value1.dt, value1.weather[0])
