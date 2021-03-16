@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap-grid.min.css";
+@import url('https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap&subset=cyrillic,cyrillic-ext,latin-ext');
+
+
+:root {
+  --color-text: #6a8194;
+  --background-gradient-grey: #708897;
+  --background-white: #fff;
+  --color-light-blue: #00a5e8;
+  --backgroud-card: linear-gradient(180deg, var(--background-white) 70%, var(--background-gradient-grey) 120%);
+  --backgroud-app: linear-gradient(130deg, #0A324C 10%, #000 140%);
+  --border-block-image: 2px solid #6E95AB;
+}
+
+body, html {
+  padding: 0;
+  margin: 0;
+  overflow: auto;
+  height: 100%;
+  display: block;
+  background: var(--backgroud-app);
+  color: var(--color-text);
+  font-family: 'PT Serif', sans-serif;
+}

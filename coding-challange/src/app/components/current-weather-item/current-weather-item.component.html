@@ -1,0 +1,14 @@
+<div class="card">
+  <p class="card__title">{{weatherOfCity.name}}</p>
+  <div class="card__data ">
+    <div class="data">
+      <img class="data__img" src="../../../assets/temperature.png">
+      <p class="data__value">{{weatherOfCity.temp.toFixed(0)}}<span>°C</span></p>
+    </div>
+    <div class="data">
+      <img class="data__img" src="../../../assets/wind.png">
+      <p class="data__value">{{weatherOfCity.windStrenth + 'm/s'}}</p>
+    </div>
+  </div>
+</div>
+

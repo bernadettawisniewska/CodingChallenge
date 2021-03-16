@@ -1,0 +1,29 @@
+<div class="container">
+  <h1 class="title">Weather Service</h1>
+  <ng-container *ngIf="!isLoading; else loader">
+    <ng-container *ngIf="!error; else errorInfo">
+      <div class="row">
+        <app-current-weather-item (click)="showHourlyForecast(item.id,item.coord)" *ngFor="let item of baseWeathers"
+                                  [weatherOfCity]="item"
+                                  class="col col-xs-12 col-sm-12 col-md-4 col-xl-4"></app-current-weather-item>
+
+      </div>
+
+      <ng-container *ngIf="!isLoadingDetails; else loader">
+        <app-hourly-weather *ngIf="forecastOfCity" [forecastOfCity]="forecastOfCity"></app-hourly-weather>
+      </ng-container>
+
+    </ng-container>
+  </ng-container>
+
+
+  <ng-template #errorInfo>
+    <h2>Sorry</h2>
+    <p>error occure</p>
+    <p>{{error}}</p>
+  </ng-template>
+  <ng-template #loader>
+    <app-loader></app-loader>
+  </ng-template>
+</div>
+

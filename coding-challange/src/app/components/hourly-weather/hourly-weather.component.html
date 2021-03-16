@@ -1,0 +1,11 @@
+<div *ngIf="forecastOfCity" class="row forecast-cont">
+  <h2 class="forecast-cont__title">Hourly Forecast for {{forecastOfCity.timezone.split('/')[1]}}</h2>
+  <div class="forecast-cont__box-items box-items row">
+    <div *ngFor="let item of forecastOfCity.hourly"
+         class="col col-xs-6 col-sm-4 col-md-2 col-lg-1 col-xl-1 box-items__item">
+      <app-time [dataTime]="item.dt">{{item.dt}}</app-time>
+      <img alt="" src="http://openweathermap.org/img/w/{{item.weather.icon}}.png">
+      <p>{{item.weather.description}}</p>
+    </div>
+  </div>
+</div>
